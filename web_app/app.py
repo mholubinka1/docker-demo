@@ -16,3 +16,6 @@ def find_location():
     city = response_json['city']
     txt = 'Hello Mudano! This application is running in {city}'
     return txt.format(city = city)
+
+if __name__ == "__main__":
+    app.run(debug=True)

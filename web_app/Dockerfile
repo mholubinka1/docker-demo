@@ -8,8 +8,7 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 COPY ./ ./
-COPY ./uwsgi.ini /etc/uwsgi.ini
 
-EXPOSE 80
+EXPOSE 5000
 
-ENTRYPOINT [ "sh", "./start.sh"]
+ENTRYPOINT [ "python3", "-m", "flask", "run", "--host=0.0.0.0"]
