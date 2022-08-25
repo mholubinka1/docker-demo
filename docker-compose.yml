@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  geolocator:
+    container_name: geolocator
+    image: geolocator:0.1
+    ports:
+      - "5000:5000"
+    restart: always 

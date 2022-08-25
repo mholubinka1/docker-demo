@@ -1,5 +1,6 @@
-FROM python:3.10.2-alpine3.14
+FROM python:3.9.6-alpine3.14
 RUN apk update && apk upgrade
+RUN pip3 install --upgrade pip
 
 RUN mkdir -p /app
 WORKDIR /app
