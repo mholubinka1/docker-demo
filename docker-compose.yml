@@ -2,8 +2,8 @@ version: "3"
 
 services:
   geolocator:
-    container_name: geolocator
-    image: geolocator:0.1
+    container_name: docker-demo-geolocator
+    image: mholubinka1/docker-demo-geolocator:1.1
     ports:
       - "5000:5000"
-    restart: always 
+    restart: always

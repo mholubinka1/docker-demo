@@ -2,9 +2,7 @@ import json
 import requests
 from flask import Flask
 
-app = Flask(__name__)
-
-def geolocate(args):
+def geolocate():
     uri = 'http://api.ipstack.com/check?access_key='
     key = '35c43096adc9416dab6bdd2d1ad53069'
     geolocationUri = uri + key
@@ -17,8 +15,10 @@ def geolocate(args):
     txt = txt.format(city = city)
     print(txt)
     return txt
+geolocate()
 
-@app.before_first_request(geolocate)
+app = Flask(__name__)
+
 @app.route('/')
 def show_location():
     return geolocate()
